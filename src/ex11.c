@@ -44,3 +44,14 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+
+/*
+numbers: 0 0 0 0
+name each: a   
+name: a
+numbers: 1 2 3 4
+name each: Z e d 
+name: Zed
+another: Zed
+another each: Z e d 
+*/
