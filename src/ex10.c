@@ -45,10 +45,12 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    int i = 0;
-    for (i = 0; argv[1][i] != '\0'; i++) {
-        char letter = argv[1][i];
-        print_vowel(letter, i);
+    for (int i = 1; i < argc; i++) {
+        for (int j = 0; argv[i][j] != '\0'; j++) {
+            char letter = argv[i][j];
+            print_vowel(letter, j);
+        }
+        printf("\n");
     }
     return 0;
 }
