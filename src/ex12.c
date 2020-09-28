@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
         'S', 'h', 'a', 'w', '\0'
     };
 
+    // sizeof 는 얼마나 많은 메모리 공간을 사용하는지를 바이트 단위로 보여준다.
     // 시스템에 따라 %ld 대신 unsigned int를 의미하는 %u 를 사용해야 할 수도 있다.
     printf("The size of an int: %ld\n", sizeof(int));
     printf("The size of areas (int[]): %ld\n", sizeof(areas));
