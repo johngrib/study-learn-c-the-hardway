@@ -88,4 +88,7 @@ Name: Frank Blank
 	Height: 72
 	Weight: 200
 */
-
+/*
+다음 명령으로 간단하게 메모리 누수를 탐지할 수 있다. Person_destroy 함수 호출을 주석처리하고 시험해보자.
+$ clang -fsanitize=address -g ex16.c ; ASAN_OPTIONS=detect_leaks=1 ./a.out
+*/
