@@ -1,4 +1,5 @@
 CFLAGS=-Wall -g
+# CFLAGS=-Wall -g -DNDEBUG
 
 clean:
 	rm -f ex{1..99}
