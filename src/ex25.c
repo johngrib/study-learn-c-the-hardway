@@ -47,9 +47,9 @@ int read_scan(const char *fmt, ...)
     char *out_char = NULL;
     char **out_string = NULL;
     int max_buffer = 0;
-
-    va_list argp;
-    va_start(argp, fmt);
+    // stdarg.h 에서 제공하는 가변 인수 처리 준비
+    va_list argp;           // 가변 인수 argp 선언
+    va_start(argp, fmt);    // 가변 인수 argp를 fmt로 초기화
 
     for (i = 0; fmt[i] != '\0'; i++) {
         if (fmt[i] == '%') {
@@ -60,7 +60,7 @@ int read_scan(const char *fmt, ...)
                     break;
 
                 case 'd':
-                    out_int = va_arg(argp, int *);
+                    out_int = va_arg(argp, int *);  // va_arg 매크로를 사용하면 argp에서 변수 하나를 얻는다
                     rc = read_int(out_int);
                     check(rc == 0, "Failed to read int.");
                     break;
@@ -130,3 +130,15 @@ error:
     return -1;
 }
 
+/*
+$ ./ex25
+What's your first name? Zed
+What's your initial? A
+What's your last name? Shaw
+How old are you? 37
+---- RESULTS ----
+First Name: Zed
+Initial: A
+Last Name: Shaw
+Age: 37
+*/
